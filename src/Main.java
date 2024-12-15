@@ -22,5 +22,7 @@ public class Main {
         // %d, %f, %s %c, %b, %n...
         // %+d, %-d, %,d, %.2f...
 
+        Casting.implicitConversionExamples();
+        Casting.explicitConversionExamples();
     }
 }
