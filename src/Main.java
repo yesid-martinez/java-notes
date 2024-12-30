@@ -38,5 +38,7 @@ public class Main {
 
         /*next(): Reads the next token (a word or text separated by spaces)
         hasNext(), hasNextInt(), etc..: Checks if more input of a specific type is available*/
+
+        MemoryManagement.memoryExample();
     }
 }
