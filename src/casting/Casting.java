@@ -1,6 +1,8 @@
+package casting;
+
 public class Casting {
 
-    public static void implicitConversionExamples() {
+    public void implicitConversionExamples() {
         System.out.println("== Implicit Conversion Examples ==");
 
         // (Int -> Double)
@@ -19,7 +21,7 @@ public class Casting {
         System.out.printf("Char '%c' to Int: %d%n", character, asciiValue);
     }
 
-    public static void explicitConversionExamples() {
+    public void explicitConversionExamples() {
         System.out.println("\n== Explicit Conversion Examples ==");
 
         //  (Double -> Int)

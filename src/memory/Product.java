@@ -1,3 +1,5 @@
+package memory;
+
 public class Product {
     public double price;
 
@@ -6,15 +8,12 @@ public class Product {
     public void setPrice(double price) { this.price = price; }
 
     public void manageProduct(){
-        Product sProduct = new Product();
-        System.out.println("Second product: " + sProduct);
-
-        double fPrice = sProduct.getPrice();
+        Product fProduct = new Product();
+        System.out.println("Product: " + fProduct);
+        double fPrice = fProduct.getPrice();
         System.out.println("First price: " + fPrice);
-
-        double sPrice = changePrice(sProduct);
+        double sPrice = changePrice(fProduct);
         System.out.println("Second price: " + sPrice);
-
     }
 
     /*
@@ -24,6 +23,7 @@ public class Product {
      the 'productRef' object affect the original object because both point to the same memory space (on the heap).
      memory space (on the heap).
     */
+
     public double changePrice(Product productRef){
         productRef.setPrice(3.99);
         return productRef.getPrice();
