@@ -36,9 +36,11 @@ public class User {
         User.permissionsCode = 0;
     }
 
-    public static void permissionsExamples() {
+    private static void permissionsExamples() {
         // this.age = 18;
         // Cannot access instance variables or methods
         // Error: 'modifiers.User.this' cannot be referenced from a static context
+
+        System.out.println("Private method example");
     }
 }

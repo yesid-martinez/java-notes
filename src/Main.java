@@ -1,8 +1,8 @@
-import strings.Strings;
+/*import strings.Strings;
 import casting.Casting;
 import input.Inputs;
 import challenges.guessinggame.GuessingGame;
-import memory.Product;
+import memory.Product;*/
 import modifiers.AccessModifiers;
 
 public class Main {
@@ -24,5 +24,6 @@ public class Main {
         product.manageProduct();*/
 
         AccessModifiers.staticExamples();
+        AccessModifiers.accessExamples();
     }
 }
