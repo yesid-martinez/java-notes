@@ -2,8 +2,8 @@ package modifiers;
 
 public class AccessModifiers {
 
-    static User fUser = new User("Natanael Cano", 22, 2674467, 999999);
-    User sUser = new User("Peso Pluma", 30, 264356, 111111);
+    static User fUser = new User("Natanael Cano", 22, 267446, 999999);
+    User sUser = new User("Peso Pluma", 30, 321584, 111111);
 
     public static void staticExamples(){
 
@@ -39,5 +39,8 @@ public class AccessModifiers {
         // It is not possible to access private methods
         // User.permissionsExamples();
         // Error: 'permissionsExamples()' has private access in 'modifiers.User'
+
+        // Protected access (also allowed inside the package)
+        System.out.println("User ID: " + fUser.id);
     }
 }

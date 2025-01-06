@@ -7,7 +7,10 @@ public class User {
     Classes outside the package will not be able to directly access that member, even if they are in an inheritance hierarchy */
 
     public int age;
+
     protected long id;
+    /* Both protected and default access allow classes in the same package to access the attribute or method */
+
     private long accountId;
 
     // Class variables
