@@ -33,5 +33,7 @@ public class Main {
         SubUser subUser = new SubUser("Axel Yesid", 33, 305811, 888888);
         // long id = subUser.id; // Error: 'id' has protected access in 'modifiers.User'
         subUser.protectedAccess();
+
+        AccessModifiers.privateAccessExample();
     }
 }

@@ -3,7 +3,7 @@ package modifiers;
 public class AccessModifiers {
 
     static User fUser = new User("Natanael Cano", 22, 267446, 999999);
-    User sUser = new User("Peso Pluma", 30, 321584, 111111);
+    static User sUser = new User("Peso Pluma", 30, 321584, 111111);
 
     public static void staticExamples(){
 
@@ -11,7 +11,7 @@ public class AccessModifiers {
         int sUserPermissions = sUser.getPermissions();*/
         // Warn: Static member 'modifiers.User.getPermissions()' accessed via instance reference
 
-        int userPermissions = User.getPermissions();
+        long userPermissions = User.getPermissions();
         System.out.println("User permissions code:" + userPermissions);
 
         /*fUser.deletePermissions();
@@ -20,7 +20,7 @@ public class AccessModifiers {
         // Output: 0 - Modifies all objects because a class method is used
 
         User.deletePermissions();
-        int sUserPermissions = User.getPermissions();
+        long sUserPermissions = User.getPermissions();
         System.out.println("Second user Permissions code:" + sUserPermissions);
     }
 
@@ -42,5 +42,15 @@ public class AccessModifiers {
 
         // Protected access (also allowed inside the package)
         System.out.println("User ID: " + fUser.id);
+    }
+
+    public static void privateAccessExample(){
+        // Private access
+        // System.out.println("Account ID: " + fUser.accountId);
+        // Error: 'accountId' has private access in 'modifiers.User'
+        // Direct access to 'accountId' is not allowed because it is declared as private.
+        System.out.println("Account ID:" + sUser.getAccountId());
+        sUser.setAccountId(123123123);
+        System.out.println("New account ID:" + sUser.getAccountId());
     }
 }

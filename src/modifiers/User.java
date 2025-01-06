@@ -11,11 +11,11 @@ public class User {
     protected long id;
     /* Both protected and default access allow classes in the same package to access the attribute or method */
 
-    private long accountId;
+    private static long accountId;
 
     // Class variables
     // If any object modifies the variable, it changes in all objects
-    private static int permissionsCode;
+    private static long permissionsCode;
 
     public User(String name, int age, long id, long accountId) {
         this.name = name;
@@ -26,16 +26,22 @@ public class User {
         /*this.permissionsCode = permissionsCode;
         Error: Permitted but conceptually invalid
         Static member 'modifiers.User.permissionsCode' accessed via instance reference*/
-        User.permissionsCode = 777;
+        User.permissionsCode = accountId;
+    }
+
+    /* Using getters and setters is recommended to encapsulate the data and
+     provide controlled access to the private fields, ensuring data integrity and flexibility */
+    public long getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(long accountId) {
+        this.accountId = accountId;
     }
 
     // Class methods
-    public static int getPermissions() {
+    public static long getPermissions() {
         return User.permissionsCode;
-    }
-
-    public static void setPermissions(int code) {
-        User.permissionsCode = code;
     }
 
     public static void deletePermissions() {
