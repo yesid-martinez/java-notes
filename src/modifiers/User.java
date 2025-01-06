@@ -2,7 +2,10 @@ package modifiers;
 
 public class User {
     // Instance variables
-    String name;
+    String name; // Default access (package-private)
+    /* Accessible only within the same package
+    Classes outside the package will not be able to directly access that member, even if they are in an inheritance hierarchy */
+
     public int age;
     protected long id;
     private long accountId;

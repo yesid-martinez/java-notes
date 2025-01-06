@@ -4,6 +4,7 @@ import input.Inputs;
 import challenges.guessinggame.GuessingGame;
 import memory.Product;*/
 import modifiers.AccessModifiers;
+import modifiers.User;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,5 +26,9 @@ public class Main {
 
         AccessModifiers.staticExamples();
         AccessModifiers.accessExamples();
+
+        /* User user = new User("Yesid Martinez", 20, 3215844, 777777);
+        String name = user.name; */
+        // Error: 'name' is not public in 'modifiers.User'. Cannot be accessed from outside package
     }
 }

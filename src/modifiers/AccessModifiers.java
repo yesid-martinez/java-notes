@@ -25,6 +25,12 @@ public class AccessModifiers {
     }
 
     public static void accessExamples(){
+        // Package-Private access
+        System.out.println("User name:" + fUser.name);
+        fUser.name = "Yesid Martinez";
+        System.out.println("New user name:" + fUser.name);
+        // AccessModifiers class can access the name attribute directly 'cause it's in the same package
+
         // Public access
         // Allows modification of the attribute value and/or access to public methods
         System.out.println("User age: " + fUser.age);
