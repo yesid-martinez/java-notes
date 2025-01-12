@@ -2,8 +2,9 @@
 import casting.Casting;
 import input.Inputs;
 import challenges.guessinggame.GuessingGame;
-import memory.Product;*/
-import modifiers.AccessModifiers;
+import memory.Product;
+import modifiers.AccessModifiers;*/
+import arrays.arraylist.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,17 +24,19 @@ public class Main {
         Product product = new Product();
         product.manageProduct();*/
 
-        AccessModifiers.staticExamples();
-        AccessModifiers.accessExamples();
+        /* AccessModifiers.staticExamples();
+        AccessModifiers.accessExamples(); */
 
         /* User user = new User("Yesid Martinez", 20, 3215844, 777777);
         String name = user.name; */
         // Error: 'name' is not public in 'modifiers.User'. Cannot be accessed from outside package
 
-        SubUser subUser = new SubUser("Axel Yesid", 33, 305811, 888888);
+        // SubUser subUser = new SubUser("Axel Yesid", 33, 305811, 888888);
         // long id = subUser.id; // Error: 'id' has protected access in 'modifiers.User'
-        subUser.protectedAccess();
+        // subUser.protectedAccess();
 
-        AccessModifiers.privateAccessExample();
+        // AccessModifiers.privateAccessExample();
+
+        Arrays.arraysExamples();
     }
 }
