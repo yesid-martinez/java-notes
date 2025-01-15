@@ -4,7 +4,7 @@ import input.Inputs;
 import challenges.guessinggame.GuessingGame;
 import memory.Product;
 import modifiers.AccessModifiers;*/
-import arrays.arraylist.Arrays;
+import arrays.arraylist.Lists;
 
 public class Main {
     public static void main(String[] args) {
@@ -37,6 +37,6 @@ public class Main {
 
         // AccessModifiers.privateAccessExample();
 
-        Arrays.arraysExamples();
+        Lists.arraysExamples();
     }
 }
