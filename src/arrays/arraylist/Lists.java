@@ -1,8 +1,6 @@
 package arrays.arraylist;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.*;
 
 public class Lists {
     public static void arraysExamples(){
@@ -21,7 +19,7 @@ public class Lists {
         var thUser = new User("Ibai", 40);
 
         // Arraylist class
-        ArrayList<User> usersList = new ArrayList<>();
+        List<User> usersList = new ArrayList<>();
 
         usersList.add(sUser);
         usersList.add(thUser);
@@ -31,7 +29,7 @@ public class Lists {
          Collections.sort(usersList);
         System.out.println("Ordered by name: " + usersList);
 
-        ArrayList<String> usersName = new ArrayList<>();
+        List<String> usersName = new LinkedList<>();
         usersName.add(sUser.name);
         usersName.add(thUser.name);
         usersName.add(user.name);
