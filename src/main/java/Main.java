@@ -5,9 +5,10 @@ import challenges.guessinggame.GuessingGame;
 import memory.Product;
 import modifiers.AccessModifiers;
 import arrays.arraylist.Lists;
-import arrays.hashmaps.HashMaps;*/
+import arrays.hashmaps.HashMaps;
 import api.http.WebService;
-import java.io.IOException;
+import java.io.IOException;*/
+import api.http.GsonTest;
 
 public class Main {
     public static void main(String[] args) {
@@ -44,11 +45,13 @@ public class Main {
 
         // HashMaps.hashExamples();
 
-        try {
+/*        try {
             WebService.webServiceExample();
         } catch (IOException | InterruptedException e) {
             System.err.println("Error al realizar la solicitud: " + e.getMessage());
             e.printStackTrace();
-        }
+        }*/
+
+        GsonTest.gsonTest();
     }
 }
