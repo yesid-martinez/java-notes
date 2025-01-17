@@ -7,6 +7,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Scanner;
 
+import static api.http.OMDbResponseHandler.gsonHandler;
+
 public class WebService {
     public static void webServiceExample() throws IOException, InterruptedException {
 
@@ -23,6 +25,16 @@ public class WebService {
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
-        System.out.println(response.body());
+        String json = response.body();
+
+        OMDbTitle[] titles = gsonHandler(json);
+        if (titles != null){
+            System.out.println("Total results: " + titles.length);
+            for (OMDbTitle title : titles) {
+                System.out.println(title.title() + " (" + title.year() + ")");
+            }
+        } else {
+            System.out.println("No results found.");
+        }
     }
 }
