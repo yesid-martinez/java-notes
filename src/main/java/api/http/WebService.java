@@ -32,9 +32,16 @@ public class WebService {
             System.out.println("Total results: " + titles.length);
             for (OMDbTitle title : titles) {
                 System.out.println(title.title() + " (" + title.year() + ")");
+                System.out.println(title);
             }
         } else {
             System.out.println("No results found.");
+        }
+
+        for (OMDbTitle omdbTitle : titles) {
+            // Title title = new Title(omdbTitle.title(), omdbTitle.year()); // Casting is required
+            Title title = new Title(omdbTitle);
+            System.out.println("Created title: " + title.title + ", year: " + title.year);
         }
     }
 }
