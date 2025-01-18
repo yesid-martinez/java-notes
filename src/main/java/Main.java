@@ -7,7 +7,6 @@ import modifiers.AccessModifiers;
 import arrays.arraylist.Lists;
 import arrays.hashmaps.HashMaps;*/
 import api.http.WebService;
-import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
@@ -44,11 +43,6 @@ public class Main {
 
         // HashMaps.hashExamples();
 
-        try {
-            WebService.webServiceExample();
-        } catch (IOException | InterruptedException e) {
-            System.err.println("Error al realizar la solicitud: " + e.getMessage());
-            e.printStackTrace();
-        }
+        WebService.webServiceExample();
     }
 }
