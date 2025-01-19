@@ -1,4 +1,6 @@
 package api.http;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.Scanner;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -19,17 +21,22 @@ public class WebService {
         String url = "https://www.omdbapi.com/?apikey=81527f1a&s=" + formattedSearch;
 
         try {
-            // Crear cliente y solicitud HTTP
+            // Create client and HTTP request
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
                     .build();
 
-            // Enviar solicitud y obtener respuesta
+            // Send request and get a response
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             String json = response.body();
 
-            // Procesar la respuesta JSON
+            File file = new File("/home/develop/java/IdeaProjects/intellij-test/data-files/test.json");
+
+            FileWriter writer = new FileWriter(file);
+            writer.write(json);
+            writer.close();
+            // Process JSON response
             OMDbTitle[] titles = gsonHandler(json);
             if (titles != null && titles.length > 0) {
                 System.out.println("Total results: " + titles.length);
@@ -37,7 +44,7 @@ public class WebService {
                     System.out.println(title.title() + " (" + title.year() + ")");
                 }
 
-                // Crear instancias de Title a partir de OMDbTitle
+                // Create Title instances from OMDbTitle
                 for (OMDbTitle omdbTitle : titles) {
                     Title title = new Title(omdbTitle);
                     System.out.println("Created title: " + title.title + ", year: " + title.year);
