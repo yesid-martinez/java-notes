@@ -1,9 +1,12 @@
 package api.http;
 
+import com.google.gson.annotations.SerializedName;
+
 public class OMDbResponse {
-    private OMDbTitle[] Search;
+    @SerializedName("Search")
+    private OMDbTitle[] search;
 
     public OMDbTitle[] getSearch() {
-        return Search;
+        return this.search;
     }
 }

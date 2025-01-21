@@ -4,12 +4,6 @@ public class Title {
     public String title;
     public int year;
 
-    public Title(String title, int year) {
-        this.title = title;
-        this.year = year;
-    }
-
-
     public Title(OMDbTitle omdbTitle) {
         this.title = omdbTitle.title();
 

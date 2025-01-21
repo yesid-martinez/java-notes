@@ -7,8 +7,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.URI;
 import java.io.IOException;
-
-import static api.http.OMDbResponseHandler.gsonHandler;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class WebService {
     public static void webServiceExample(){
@@ -31,24 +31,46 @@ public class WebService {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             String json = response.body();
 
-            File file = new File("/home/develop/java/IdeaProjects/intellij-test/data-files/test.json");
+            Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
+            OMDbResponse prettyObjectResponse = prettyGson.fromJson(json, OMDbResponse.class);
 
+            OMDbTitle[] prettyTitles = prettyObjectResponse.getSearch();
+
+            String jsonTitles = prettyGson.toJson(prettyTitles);
+
+            if (prettyTitles != null) {
+                File prettyFile = new File("/home/develop/java/IdeaProjects/intellij-test/data-files/pretty-test.json");
+
+                FileWriter prettyWriter = new FileWriter(prettyFile);
+                prettyWriter.write(jsonTitles);
+                prettyWriter.close();
+
+            } else {
+                System.out.println("No results found.");
+            }
+
+            Gson gson = new GsonBuilder().create();
+            File file = new File("/home/develop/java/IdeaProjects/intellij-test/data-files/test.json");
             FileWriter writer = new FileWriter(file);
-            writer.write(json);
+
+            OMDbResponse objectResponse = gson.fromJson(json, OMDbResponse.class);
+            OMDbTitle[] defaultTitles = objectResponse.getSearch();
+            String stringTitles = gson.toJson(defaultTitles);
+
+            writer.write(stringTitles);
             writer.close();
-            // Process JSON response
-            OMDbTitle[] titles = gsonHandler(json);
-            if (titles != null && titles.length > 0) {
-                System.out.println("Total results: " + titles.length);
-                for (OMDbTitle title : titles) {
+
+            if (defaultTitles != null) {
+                for (OMDbTitle title : defaultTitles) {
                     System.out.println(title.title() + " (" + title.year() + ")");
                 }
 
                 // Create Title instances from OMDbTitle
-                for (OMDbTitle omdbTitle : titles) {
-                    Title title = new Title(omdbTitle);
-                    System.out.println("Created title: " + title.title + ", year: " + title.year);
-                }
+/*                for (OMDbTitle title : defaultTitles) {
+                    Title titleObj = new Title(title);
+                    System.out.println("Title: " + titleObj.title + ", year: " + titleObj.year);
+                }*/
+
             } else {
                 System.out.println("No results found.");
             }

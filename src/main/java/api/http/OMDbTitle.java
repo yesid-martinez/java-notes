@@ -1,6 +1,9 @@
 package api.http;
 
-//interpreta el json
-public record OMDbTitle(String title, String year) {
-}
+import com.google.gson.annotations.SerializedName;
+
+public record OMDbTitle(
+        @SerializedName("Title") String title,
+        @SerializedName("Year") String year
+) {}
 
