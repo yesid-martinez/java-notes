@@ -1,12 +1,12 @@
-/*import strings.Strings;
-import casting.Casting;
-import input.Inputs;
-import challenges.guessinggame.GuessingGame;
-import memory.Product;
-import modifiers.AccessModifiers;
+// import strings.Strings;
+// import casting.Casting;
+// import input.Inputs;
+// import challenges.guessinggame.GuessingGame;
+// import memory.Product;
+// import modifiers.AccessModifiers;
 import arrays.arraylist.Lists;
-import arrays.hashmaps.HashMaps;*/
-import api.http.WebService;
+// import arrays.hashmaps.HashMaps;
+// import api.http.WebService;
 
 public class Main {
     public static void main(String[] args) {
@@ -39,10 +39,10 @@ public class Main {
 
         // AccessModifiers.privateAccessExample();
 
-        // Lists.arraysExamples();
+         Lists.arraysExamples();
 
         // HashMaps.hashExamples();
 
-         WebService.webServiceExample();
+         // WebService.webServiceExample();
     }
 }
