@@ -4,7 +4,7 @@
 // import challenges.guessinggame.GuessingGame;
 // import memory.Product;
 // import modifiers.AccessModifiers;
-import arrays.arraylist.Lists;
+import arrays.arraylist.ArrayLists;
 // import arrays.hashmaps.HashMaps;
 // import api.http.WebService;
 
@@ -39,7 +39,7 @@ public class Main {
 
         // AccessModifiers.privateAccessExample();
 
-         Lists.arraysExamples();
+         ArrayLists.arrayListExamples();
 
         // HashMaps.hashExamples();
 
